@@ -1,23 +1,28 @@
 package pro.sky.skyproworkwitnspring.data;
 
-import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
 
+import java.util.List;
+
+@Component
+@SessionScope
 public class BasketImpl implements Basket {
-    private int idGood;
+    private List<Integer> idGood;
     private int idClient;
 
-    public BasketImpl(int idClient, int idGood) {
+    public BasketImpl(int idClient, List<Integer> idGood) {
         this.idClient = idClient;
         this.idGood = idGood;
     }
 
     @Override
-    public int getIdOfGood() {
+    public List<Integer> getIdOfGood() {
         return idGood;
     }
 
     @Override
-    public int setIdOfGood(int idGood) {
+    public List<Integer> setIdOfGood(List<Integer> idGood) {
         return this.idGood = idGood;
     }
 

@@ -1,10 +1,12 @@
 package pro.sky.skyproworkwitnspring.data;
 
+import java.util.List;
+
 public interface Basket {
 
-    int getIdOfGood();
+    List<Integer> getIdOfGood();
 
-    int setIdOfGood(int idGood);
+    List<Integer> setIdOfGood(List<Integer> idGood);
 
     int getIdClient();
 

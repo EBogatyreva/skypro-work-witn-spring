@@ -1,8 +1,13 @@
 package pro.sky.skyproworkwitnspring.service;
 
-public interface ServiceBasket {
-    String getAllGoods();
+import pro.sky.skyproworkwitnspring.data.BasketImpl;
 
-    String addNewGood(int IdClient, int idGood);
+import java.util.ArrayList;
+import java.util.List;
+
+public interface ServiceBasket {
+    ArrayList<BasketImpl> getAllGoods();
+
+    String addNewGood(int IdClient, List<Integer> idGood);
 
 }

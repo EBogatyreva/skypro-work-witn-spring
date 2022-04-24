@@ -6,17 +6,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pro.sky.skyproworkwitnspring.service.impl.ServiceBasketImpl;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/store/order")
 public class ControllerBasket {
-    private final ServiceBasketImpl service;//прописываем тк его не увидит контроллер
+    private final ServiceBasketImpl service;
 
     public ControllerBasket(ServiceBasketImpl service) {//разобраться с эим моментом зачем мы тут прописываем
         this.service = service;
     }
 
     @GetMapping("/add")
-    public String addGood(@RequestParam(required = true) int idClient, @RequestParam(required = true) int idGood) {//1 или несколько id должно быть
+    public String addGood(@RequestParam(required = true) int idClient, @RequestParam(required = true) List<Integer> idGood) {
         return "<b>Add new goods </b>" + service.addNewGood(idClient, idGood);
     }
 
